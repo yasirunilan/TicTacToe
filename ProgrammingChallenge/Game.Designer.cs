@@ -43,11 +43,14 @@
             this.buttonExit = new System.Windows.Forms.Button();
             this.labelResult = new System.Windows.Forms.Label();
             this.buttonHighScore = new System.Windows.Forms.Button();
+            this.labelPlayer1Score = new System.Windows.Forms.Label();
+            this.labelPlayer2Score = new System.Windows.Forms.Label();
+            this.labelTurnIndicator = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonA1
             // 
-            this.buttonA1.Location = new System.Drawing.Point(28, 41);
+            this.buttonA1.Location = new System.Drawing.Point(28, 46);
             this.buttonA1.Name = "buttonA1";
             this.buttonA1.Size = new System.Drawing.Size(70, 70);
             this.buttonA1.TabIndex = 0;
@@ -56,19 +59,21 @@
             // 
             // buttonA2
             // 
-            this.buttonA2.Location = new System.Drawing.Point(104, 41);
+            this.buttonA2.Location = new System.Drawing.Point(100, 46);
             this.buttonA2.Name = "buttonA2";
             this.buttonA2.Size = new System.Drawing.Size(70, 70);
             this.buttonA2.TabIndex = 1;
             this.buttonA2.UseVisualStyleBackColor = true;
+            this.buttonA2.Click += new System.EventHandler(this.buttonA2_Click);
             // 
             // buttonA3
             // 
-            this.buttonA3.Location = new System.Drawing.Point(180, 41);
+            this.buttonA3.Location = new System.Drawing.Point(172, 46);
             this.buttonA3.Name = "buttonA3";
             this.buttonA3.Size = new System.Drawing.Size(70, 70);
             this.buttonA3.TabIndex = 2;
             this.buttonA3.UseVisualStyleBackColor = true;
+            this.buttonA3.Click += new System.EventHandler(this.buttonA3_Click);
             // 
             // buttonB1
             // 
@@ -77,50 +82,56 @@
             this.buttonB1.Size = new System.Drawing.Size(70, 70);
             this.buttonB1.TabIndex = 3;
             this.buttonB1.UseVisualStyleBackColor = true;
+            this.buttonB1.Click += new System.EventHandler(this.buttonB1_Click);
             // 
             // buttonB2
             // 
-            this.buttonB2.Location = new System.Drawing.Point(104, 117);
+            this.buttonB2.Location = new System.Drawing.Point(100, 117);
             this.buttonB2.Name = "buttonB2";
             this.buttonB2.Size = new System.Drawing.Size(70, 70);
             this.buttonB2.TabIndex = 4;
             this.buttonB2.UseVisualStyleBackColor = true;
+            this.buttonB2.Click += new System.EventHandler(this.buttonB2_Click);
             // 
             // buttonB3
             // 
-            this.buttonB3.Location = new System.Drawing.Point(180, 117);
+            this.buttonB3.Location = new System.Drawing.Point(172, 117);
             this.buttonB3.Name = "buttonB3";
             this.buttonB3.Size = new System.Drawing.Size(70, 70);
             this.buttonB3.TabIndex = 5;
             this.buttonB3.UseVisualStyleBackColor = true;
+            this.buttonB3.Click += new System.EventHandler(this.buttonB3_Click);
             // 
             // buttonC1
             // 
-            this.buttonC1.Location = new System.Drawing.Point(28, 193);
+            this.buttonC1.Location = new System.Drawing.Point(28, 188);
             this.buttonC1.Name = "buttonC1";
             this.buttonC1.Size = new System.Drawing.Size(70, 70);
             this.buttonC1.TabIndex = 6;
             this.buttonC1.UseVisualStyleBackColor = true;
+            this.buttonC1.Click += new System.EventHandler(this.buttonC1_Click);
             // 
             // buttonC3
             // 
-            this.buttonC3.Location = new System.Drawing.Point(180, 193);
+            this.buttonC3.Location = new System.Drawing.Point(172, 188);
             this.buttonC3.Name = "buttonC3";
             this.buttonC3.Size = new System.Drawing.Size(70, 70);
             this.buttonC3.TabIndex = 7;
             this.buttonC3.UseVisualStyleBackColor = true;
+            this.buttonC3.Click += new System.EventHandler(this.buttonC3_Click);
             // 
             // buttonC2
             // 
-            this.buttonC2.Location = new System.Drawing.Point(104, 193);
+            this.buttonC2.Location = new System.Drawing.Point(100, 188);
             this.buttonC2.Name = "buttonC2";
             this.buttonC2.Size = new System.Drawing.Size(70, 70);
             this.buttonC2.TabIndex = 8;
             this.buttonC2.UseVisualStyleBackColor = true;
+            this.buttonC2.Click += new System.EventHandler(this.buttonC2_Click);
             // 
             // buttonPause
             // 
-            this.buttonPause.Location = new System.Drawing.Point(346, 99);
+            this.buttonPause.Location = new System.Drawing.Point(296, 99);
             this.buttonPause.Name = "buttonPause";
             this.buttonPause.Size = new System.Drawing.Size(75, 23);
             this.buttonPause.TabIndex = 9;
@@ -129,25 +140,27 @@
             // 
             // buttonNewGame
             // 
-            this.buttonNewGame.Location = new System.Drawing.Point(346, 41);
+            this.buttonNewGame.Location = new System.Drawing.Point(296, 41);
             this.buttonNewGame.Name = "buttonNewGame";
             this.buttonNewGame.Size = new System.Drawing.Size(75, 23);
             this.buttonNewGame.TabIndex = 10;
             this.buttonNewGame.Text = "New Game";
             this.buttonNewGame.UseVisualStyleBackColor = true;
+            this.buttonNewGame.Click += new System.EventHandler(this.buttonNewGame_Click);
             // 
             // buttonMainMenu
             // 
-            this.buttonMainMenu.Location = new System.Drawing.Point(346, 128);
+            this.buttonMainMenu.Location = new System.Drawing.Point(296, 128);
             this.buttonMainMenu.Name = "buttonMainMenu";
             this.buttonMainMenu.Size = new System.Drawing.Size(75, 23);
             this.buttonMainMenu.TabIndex = 11;
             this.buttonMainMenu.Text = "Main Menu";
             this.buttonMainMenu.UseVisualStyleBackColor = true;
+            this.buttonMainMenu.Click += new System.EventHandler(this.buttonMainMenu_Click);
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(346, 157);
+            this.buttonExit.Location = new System.Drawing.Point(297, 157);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(75, 23);
             this.buttonExit.TabIndex = 12;
@@ -158,26 +171,59 @@
             // labelResult
             // 
             this.labelResult.AutoSize = true;
-            this.labelResult.Location = new System.Drawing.Point(310, 222);
+            this.labelResult.Location = new System.Drawing.Point(269, 188);
             this.labelResult.Name = "labelResult";
             this.labelResult.Size = new System.Drawing.Size(89, 13);
             this.labelResult.TabIndex = 13;
             this.labelResult.Text = "Player yasiru won";
+            this.labelResult.Click += new System.EventHandler(this.labelResult_Click);
             // 
             // buttonHighScore
             // 
-            this.buttonHighScore.Location = new System.Drawing.Point(346, 70);
+            this.buttonHighScore.Location = new System.Drawing.Point(296, 70);
             this.buttonHighScore.Name = "buttonHighScore";
             this.buttonHighScore.Size = new System.Drawing.Size(75, 23);
             this.buttonHighScore.TabIndex = 14;
             this.buttonHighScore.Text = "High Score";
             this.buttonHighScore.UseVisualStyleBackColor = true;
+            this.buttonHighScore.Click += new System.EventHandler(this.buttonHighScore_Click);
+            // 
+            // labelPlayer1Score
+            // 
+            this.labelPlayer1Score.AutoSize = true;
+            this.labelPlayer1Score.Location = new System.Drawing.Point(293, 231);
+            this.labelPlayer1Score.Name = "labelPlayer1Score";
+            this.labelPlayer1Score.Size = new System.Drawing.Size(79, 13);
+            this.labelPlayer1Score.TabIndex = 15;
+            this.labelPlayer1Score.Text = "PlayerName : 0";
+            // 
+            // labelPlayer2Score
+            // 
+            this.labelPlayer2Score.AutoSize = true;
+            this.labelPlayer2Score.Location = new System.Drawing.Point(293, 254);
+            this.labelPlayer2Score.Name = "labelPlayer2Score";
+            this.labelPlayer2Score.Size = new System.Drawing.Size(79, 13);
+            this.labelPlayer2Score.TabIndex = 16;
+            this.labelPlayer2Score.Text = "PlayerName : 0";
+            // 
+            // labelTurnIndicator
+            // 
+            this.labelTurnIndicator.AutoSize = true;
+            this.labelTurnIndicator.Location = new System.Drawing.Point(39, 26);
+            this.labelTurnIndicator.Name = "labelTurnIndicator";
+            this.labelTurnIndicator.Size = new System.Drawing.Size(73, 13);
+            this.labelTurnIndicator.TabIndex = 17;
+            this.labelTurnIndicator.Text = "Turn Indicator";
+            this.labelTurnIndicator.Click += new System.EventHandler(this.labelTurnIndicator_Click);
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(433, 326);
+            this.ClientSize = new System.Drawing.Size(390, 326);
+            this.Controls.Add(this.labelTurnIndicator);
+            this.Controls.Add(this.labelPlayer2Score);
+            this.Controls.Add(this.labelPlayer1Score);
             this.Controls.Add(this.buttonHighScore);
             this.Controls.Add(this.labelResult);
             this.Controls.Add(this.buttonExit);
@@ -218,5 +264,8 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Button buttonHighScore;
+        private System.Windows.Forms.Label labelPlayer1Score;
+        private System.Windows.Forms.Label labelPlayer2Score;
+        private System.Windows.Forms.Label labelTurnIndicator;
     }
 }

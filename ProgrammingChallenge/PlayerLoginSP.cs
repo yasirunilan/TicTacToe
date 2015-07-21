@@ -21,5 +21,10 @@ namespace ProgrammingChallenge
         {
 
         }
+
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
