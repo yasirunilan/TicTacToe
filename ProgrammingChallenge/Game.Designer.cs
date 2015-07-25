@@ -46,6 +46,7 @@
             this.labelPlayer1Score = new System.Windows.Forms.Label();
             this.labelPlayer2Score = new System.Windows.Forms.Label();
             this.labelTurnIndicator = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonA1
@@ -173,9 +174,8 @@
             this.labelResult.AutoSize = true;
             this.labelResult.Location = new System.Drawing.Point(269, 188);
             this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(89, 13);
+            this.labelResult.Size = new System.Drawing.Size(0, 13);
             this.labelResult.TabIndex = 13;
-            this.labelResult.Text = "Player yasiru won";
             this.labelResult.Click += new System.EventHandler(this.labelResult_Click);
             // 
             // buttonHighScore
@@ -211,16 +211,26 @@
             this.labelTurnIndicator.AutoSize = true;
             this.labelTurnIndicator.Location = new System.Drawing.Point(39, 26);
             this.labelTurnIndicator.Name = "labelTurnIndicator";
-            this.labelTurnIndicator.Size = new System.Drawing.Size(73, 13);
+            this.labelTurnIndicator.Size = new System.Drawing.Size(82, 13);
             this.labelTurnIndicator.TabIndex = 17;
-            this.labelTurnIndicator.Text = "Turn Indicator";
+            this.labelTurnIndicator.Text = "Start The Game";
             this.labelTurnIndicator.Click += new System.EventHandler(this.labelTurnIndicator_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(146, 300);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 18;
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProgrammingChallenge.Properties.Resources.back2;
             this.ClientSize = new System.Drawing.Size(390, 326);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTurnIndicator);
             this.Controls.Add(this.labelPlayer2Score);
             this.Controls.Add(this.labelPlayer1Score);
@@ -242,6 +252,7 @@
             this.MaximizeBox = false;
             this.Name = "Game";
             this.Text = "Game";
+            this.Load += new System.EventHandler(this.Game_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +278,6 @@
         private System.Windows.Forms.Label labelPlayer1Score;
         private System.Windows.Forms.Label labelPlayer2Score;
         private System.Windows.Forms.Label labelTurnIndicator;
+        private System.Windows.Forms.Label label1;
     }
 }

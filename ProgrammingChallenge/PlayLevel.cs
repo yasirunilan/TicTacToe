@@ -34,7 +34,9 @@ namespace ProgrammingChallenge
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-
+            this.Visible = false;
+            PlayModeWindow pmwi = new PlayModeWindow();
+            pmwi.Show();
         }
     }
 }

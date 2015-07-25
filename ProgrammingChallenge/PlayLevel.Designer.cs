@@ -31,7 +31,7 @@
             this.buttonEasy = new System.Windows.Forms.Button();
             this.buttonMedium = new System.Windows.Forms.Button();
             this.buttonHard = new System.Windows.Forms.Button();
-            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonEasy
@@ -64,22 +64,23 @@
             this.buttonHard.UseVisualStyleBackColor = true;
             this.buttonHard.Click += new System.EventHandler(this.buttonHard_Click);
             // 
-            // buttonBack
+            // buttonMenu
             // 
-            this.buttonBack.Location = new System.Drawing.Point(25, 217);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 23);
-            this.buttonBack.TabIndex = 3;
-            this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            this.buttonMenu.Location = new System.Drawing.Point(25, 217);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(75, 23);
+            this.buttonMenu.TabIndex = 3;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // PlayLevel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ProgrammingChallenge.Properties.Resources.back2;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonHard);
             this.Controls.Add(this.buttonMedium);
             this.Controls.Add(this.buttonEasy);
@@ -95,6 +96,6 @@
         private System.Windows.Forms.Button buttonEasy;
         private System.Windows.Forms.Button buttonMedium;
         private System.Windows.Forms.Button buttonHard;
-        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonMenu;
     }
 }

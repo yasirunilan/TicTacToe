@@ -88,6 +88,9 @@
     <EmbeddedResource Include="Game.resx">
       <DependentUpon>Game.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GameController.resx">
+      <DependentUpon>GameController.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PlayerLoginSP.resx">
       <DependentUpon>PlayerLoginSP.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +135,7 @@
   <ItemGroup>
     <Content Include="circle.jpg" />
     <None Include="Resources\ciclenew.bmp" />
+    <None Include="Resources\back2.jpg" />
     <Content Include="Resources\circle.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
