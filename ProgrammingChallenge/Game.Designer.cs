@@ -47,6 +47,8 @@
             this.labelPlayer2Score = new System.Windows.Forms.Label();
             this.labelTurnIndicator = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBoxP1Score = new System.Windows.Forms.TextBox();
+            this.textBoxP2Score = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonA1
@@ -191,20 +193,20 @@
             // labelPlayer1Score
             // 
             this.labelPlayer1Score.AutoSize = true;
-            this.labelPlayer1Score.Location = new System.Drawing.Point(293, 231);
+            this.labelPlayer1Score.Location = new System.Drawing.Point(269, 213);
             this.labelPlayer1Score.Name = "labelPlayer1Score";
-            this.labelPlayer1Score.Size = new System.Drawing.Size(79, 13);
+            this.labelPlayer1Score.Size = new System.Drawing.Size(64, 13);
             this.labelPlayer1Score.TabIndex = 15;
-            this.labelPlayer1Score.Text = "PlayerName : 0";
+            this.labelPlayer1Score.Text = "PlayerName";
             // 
             // labelPlayer2Score
             // 
             this.labelPlayer2Score.AutoSize = true;
-            this.labelPlayer2Score.Location = new System.Drawing.Point(293, 254);
+            this.labelPlayer2Score.Location = new System.Drawing.Point(269, 257);
             this.labelPlayer2Score.Name = "labelPlayer2Score";
-            this.labelPlayer2Score.Size = new System.Drawing.Size(79, 13);
+            this.labelPlayer2Score.Size = new System.Drawing.Size(64, 13);
             this.labelPlayer2Score.TabIndex = 16;
-            this.labelPlayer2Score.Text = "PlayerName : 0";
+            this.labelPlayer2Score.Text = "PlayerName";
             // 
             // labelTurnIndicator
             // 
@@ -224,12 +226,29 @@
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 18;
             // 
+            // textBoxP1Score
+            // 
+            this.textBoxP1Score.Location = new System.Drawing.Point(339, 210);
+            this.textBoxP1Score.Name = "textBoxP1Score";
+            this.textBoxP1Score.Size = new System.Drawing.Size(39, 20);
+            this.textBoxP1Score.TabIndex = 19;
+            // 
+            // textBoxP2Score
+            // 
+            this.textBoxP2Score.Location = new System.Drawing.Point(339, 254);
+            this.textBoxP2Score.Name = "textBoxP2Score";
+            this.textBoxP2Score.Size = new System.Drawing.Size(39, 20);
+            this.textBoxP2Score.TabIndex = 20;
+            this.textBoxP2Score.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProgrammingChallenge.Properties.Resources.back2;
             this.ClientSize = new System.Drawing.Size(390, 326);
+            this.Controls.Add(this.textBoxP2Score);
+            this.Controls.Add(this.textBoxP1Score);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelTurnIndicator);
             this.Controls.Add(this.labelPlayer2Score);
@@ -275,9 +294,11 @@
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.Button buttonHighScore;
-        private System.Windows.Forms.Label labelPlayer1Score;
-        private System.Windows.Forms.Label labelPlayer2Score;
-        private System.Windows.Forms.Label labelTurnIndicator;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxP1Score;
+        private System.Windows.Forms.TextBox textBoxP2Score;
+        public System.Windows.Forms.Label labelPlayer1Score;
+        public System.Windows.Forms.Label labelPlayer2Score;
+        public System.Windows.Forms.Label labelTurnIndicator;
     }
 }

@@ -30,13 +30,13 @@
         {
             this.labelPlayer1 = new System.Windows.Forms.Label();
             this.labelPlayer2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBoxPlayer1 = new System.Windows.Forms.TextBox();
+            this.textBoxPlayer2 = new System.Windows.Forms.TextBox();
             this.labelPlayFirst = new System.Windows.Forms.Label();
             this.radioButtonP1 = new System.Windows.Forms.RadioButton();
             this.radioButtonP2 = new System.Windows.Forms.RadioButton();
             this.buttonPlay = new System.Windows.Forms.Button();
-            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelPlayer1
@@ -57,19 +57,19 @@
             this.labelPlayer2.TabIndex = 1;
             this.labelPlayer2.Text = "Player Name 2 :";
             // 
-            // textBox1
+            // textBoxPlayer1
             // 
-            this.textBox1.Location = new System.Drawing.Point(113, 45);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 2;
+            this.textBoxPlayer1.Location = new System.Drawing.Point(113, 45);
+            this.textBoxPlayer1.Name = "textBoxPlayer1";
+            this.textBoxPlayer1.Size = new System.Drawing.Size(137, 20);
+            this.textBoxPlayer1.TabIndex = 2;
             // 
-            // textBox2
+            // textBoxPlayer2
             // 
-            this.textBox2.Location = new System.Drawing.Point(113, 101);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 20);
-            this.textBox2.TabIndex = 3;
+            this.textBoxPlayer2.Location = new System.Drawing.Point(113, 101);
+            this.textBoxPlayer2.Name = "textBoxPlayer2";
+            this.textBoxPlayer2.Size = new System.Drawing.Size(137, 20);
+            this.textBoxPlayer2.TabIndex = 3;
             // 
             // labelPlayFirst
             // 
@@ -110,15 +110,17 @@
             this.buttonPlay.TabIndex = 7;
             this.buttonPlay.Text = "Play";
             this.buttonPlay.UseVisualStyleBackColor = true;
+            this.buttonPlay.Click += new System.EventHandler(this.buttonPlay_Click);
             // 
-            // buttonBack
+            // buttonMenu
             // 
-            this.buttonBack.Location = new System.Drawing.Point(28, 211);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 23);
-            this.buttonBack.TabIndex = 8;
-            this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonMenu.Location = new System.Drawing.Point(28, 211);
+            this.buttonMenu.Name = "buttonMenu";
+            this.buttonMenu.Size = new System.Drawing.Size(75, 23);
+            this.buttonMenu.TabIndex = 8;
+            this.buttonMenu.Text = "Menu";
+            this.buttonMenu.UseVisualStyleBackColor = true;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // PlayerLoginTP
             // 
@@ -126,13 +128,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ProgrammingChallenge.Properties.Resources.back2;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.buttonBack);
+            this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonPlay);
             this.Controls.Add(this.radioButtonP2);
             this.Controls.Add(this.radioButtonP1);
             this.Controls.Add(this.labelPlayFirst);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxPlayer2);
+            this.Controls.Add(this.textBoxPlayer1);
             this.Controls.Add(this.labelPlayer2);
             this.Controls.Add(this.labelPlayer1);
             this.MaximizeBox = false;
@@ -147,12 +149,12 @@
 
         private System.Windows.Forms.Label labelPlayer1;
         private System.Windows.Forms.Label labelPlayer2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxPlayer1;
+        private System.Windows.Forms.TextBox textBoxPlayer2;
         private System.Windows.Forms.Label labelPlayFirst;
         private System.Windows.Forms.RadioButton radioButtonP1;
         private System.Windows.Forms.RadioButton radioButtonP2;
         private System.Windows.Forms.Button buttonPlay;
-        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonMenu;
     }
 }

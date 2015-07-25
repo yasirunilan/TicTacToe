@@ -22,6 +22,14 @@ namespace ProgrammingChallenge
         Random rnd = new Random();
         int[] numbers = new int[9];
         String winner;
+
+        
+        public String level { get; set; }
+        public String player1 { get; set; }
+        public string player2 { get; set; }
+
+        public String mode { get; set; }
+        
         private void buttonExit_Click(object sender, EventArgs e)
         {
 
@@ -52,12 +60,18 @@ namespace ProgrammingChallenge
             //disable the current button after changing icon
             buttonA1.Enabled = false;
             TurnChanger(turnCount);
-            //call EasyPlay if the user has selected easy mode
-            EasyPlay();
-            //CheckForWin();
-            
+            //call EasyPlay if the user has selected easy mode otherwise paly hard
+            if (mode=="single")
+            {
+                CheckConditions();
+            }
+            else if(mode == "double")
+            {
+                CheckConditions();
+            }
 
-            
+            labelResult.Text = level;
+           
         }
 
         private void buttonA2_Click(object sender, EventArgs e)
@@ -78,8 +92,14 @@ namespace ProgrammingChallenge
                 
             buttonA2.Enabled = false;
             TurnChanger(turnCount);
-            EasyPlay();
-            //CheckForWin();
+            if (mode == "single")
+            {
+                CheckConditions();
+            }
+            else if (mode == "double")
+            {
+                CheckConditions();
+            }
         }
 
         private void buttonA3_Click(object sender, EventArgs e)
@@ -100,8 +120,14 @@ namespace ProgrammingChallenge
                 
             buttonA3.Enabled = false;
             TurnChanger(turnCount);
-            EasyPlay();
-            //CheckForWin();
+            if (mode == "single")
+            {
+                CheckConditions();
+            }
+            else if (mode == "double")
+            {
+                CheckConditions();
+            }
         }
 
         private void buttonB1_Click(object sender, EventArgs e)
@@ -122,8 +148,14 @@ namespace ProgrammingChallenge
                 
             buttonB1.Enabled = false;
             TurnChanger(turnCount);
-            EasyPlay();
-            //CheckForWin();
+            if (mode == "single")
+            {
+                CheckConditions();
+            }
+            else if (mode == "double")
+            {
+                CheckConditions();
+            }
         }
 
         private void buttonB2_Click(object sender, EventArgs e)
@@ -144,8 +176,14 @@ namespace ProgrammingChallenge
                 
             buttonB2.Enabled = false;
             TurnChanger(turnCount);
-            EasyPlay();
-            //CheckForWin();
+            if (mode == "single")
+            {
+                CheckConditions();
+            }
+            else if (mode == "double")
+            {
+                CheckConditions();
+            }
         }
 
         private void buttonB3_Click(object sender, EventArgs e)
@@ -167,8 +205,14 @@ namespace ProgrammingChallenge
                 
             buttonB3.Enabled = false;
             TurnChanger(turnCount);
-            EasyPlay();
-            //CheckForWin();
+            if (mode == "single")
+            {
+                CheckConditions();
+            }
+            else if (mode == "double")
+            {
+                CheckConditions();
+            }
         }
 
         private void buttonC1_Click(object sender, EventArgs e)
@@ -189,8 +233,14 @@ namespace ProgrammingChallenge
                 
             buttonC1.Enabled = false;
             TurnChanger(turnCount);
-            EasyPlay();
-            //CheckForWin();
+            if (mode == "single")
+            {
+                CheckConditions();
+            }
+            else if (mode == "double")
+            {
+                CheckConditions();
+            }
         }
 
         private void buttonC2_Click(object sender, EventArgs e)
@@ -211,8 +261,14 @@ namespace ProgrammingChallenge
                 
             buttonC2.Enabled = false;
             TurnChanger(turnCount);
-            EasyPlay();
-            //CheckForWin();
+            if (mode == "single")
+            {
+                CheckConditions();
+            }
+            else if (mode == "double")
+            {
+                CheckConditions();
+            }
         }
 
         private void buttonC3_Click(object sender, EventArgs e)
@@ -233,8 +289,14 @@ namespace ProgrammingChallenge
                 
             buttonC3.Enabled = false;
             TurnChanger(turnCount);
-            EasyPlay();
-            //CheckForWin();
+            if (mode == "single")
+            {
+                CheckConditions();
+            }
+            else if (mode == "double")
+            {
+                CheckConditions();
+            }
         }
 
         private void buttonHighScore_Click(object sender, EventArgs e)
@@ -283,27 +345,28 @@ namespace ProgrammingChallenge
             winner=CheckForWin();
             if (winner == null)
             {
+                //initialize the button array for the use in this function
                 Button[] btnarray = { buttonA1, buttonA2, buttonA3, buttonB1, buttonB2, buttonB3, buttonC1, buttonC2, buttonC3 };
 
 
                 int random = 0;
+                //if game has not ended
                 if (turnCount != 9)
                 {
-
+                    //select a button which is still enabled
                     while (btnarray[random].Enabled == false)
                     {
                         random = rnd.Next(0, 9);
                     }
-
+                    //increment the turnCount and do other changes
                     turnCount++;
-
                     btnarray[random].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
                     numbers[random] = 2;
                     btnarray[random].Enabled = false;
                 }
-
+                //change the turn
                 TurnChanger(turnCount);
-
+                //check for a winner
                 CheckForWin();
             }
 
@@ -428,14 +491,213 @@ namespace ProgrammingChallenge
             {
                 Button[] btnarray = { buttonA1, buttonA2, buttonA3, buttonB1, buttonB2, buttonB3, buttonC1, buttonC2, buttonC3 };
 
-                if(numbers[0])
+                if (turnCount != 9)
+                {
+                    turnCount++;
+                    if((numbers[0]==numbers[1]) && (btnarray[2].Enabled==true)){
+
+                        btnarray[2].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[2] = 2;
+                        btnarray[2].Enabled = false;
+                    }
+                    else if ((numbers[0] == numbers[2]) && (btnarray[1].Enabled == true))
+                    {
+                        btnarray[1].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[1] = 2;
+                        btnarray[1].Enabled = false;
+                    }
+                    else if ((numbers[1] == numbers[2]) && (btnarray[0].Enabled == true))
+                    {
+                        btnarray[0].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[0] = 2;
+                        btnarray[0].Enabled = false;
+                    }
+
+
+                    else if ((numbers[0] == numbers[3]) && (btnarray[6].Enabled == true))
+                    {
+                        btnarray[6].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[6] = 2;
+                        btnarray[6].Enabled = false;
+                    }
+                    else if ((numbers[0] == numbers[6]) && (btnarray[3].Enabled == true))
+                    {
+                        btnarray[3].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[3] = 2;
+                        btnarray[3].Enabled = false;
+                    }
+                    else if ((numbers[3] == numbers[6]) && (btnarray[0].Enabled == true))
+                    {
+                        btnarray[0].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[0] = 2;
+                        btnarray[0].Enabled = false;
+                    }
+
+                    
+                    else if ((numbers[2] == numbers[5]) && (btnarray[8].Enabled == true))
+                    {
+                        btnarray[8].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[8] = 2;
+                        btnarray[8].Enabled = false;
+                    }
+                    else if ((numbers[2] == numbers[8]) && (btnarray[5].Enabled == true))
+                    {
+                        btnarray[5].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[5] = 2;
+                        btnarray[5].Enabled = false;
+                    }
+                    else if ((numbers[5] == numbers[5]) && (btnarray[2].Enabled == true))
+                    {
+                        btnarray[2].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[2] = 2;
+                        btnarray[2].Enabled = false;
+                    }
+
+                    else if ((numbers[6] == numbers[7]) && (btnarray[8].Enabled == true))
+                    {
+                        btnarray[8].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[8] = 2;
+                        btnarray[8].Enabled = false;
+                    }
+                    else if ((numbers[6] == numbers[8]) && (btnarray[7].Enabled == true))
+                    {
+                        btnarray[7].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[7] = 2;
+                        btnarray[7].Enabled = false;
+                    }
+                    else if ((numbers[7] == numbers[8]) && (btnarray[6].Enabled == true))
+                    {
+                        btnarray[6].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[6] = 2;
+                        btnarray[6].Enabled = false;
+                    }
+
+                    else if ((numbers[0] == numbers[4]) && (btnarray[8].Enabled == true))
+                    {
+                        btnarray[8].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[8] = 2;
+                        btnarray[8].Enabled = false;
+                    }
+                    else if ((numbers[0] == numbers[8]) && (btnarray[4].Enabled == true))
+                    {
+                        btnarray[4].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[4] = 2;
+                        btnarray[4].Enabled = false;
+                    }
+                    else if ((numbers[8] == numbers[4]) && (btnarray[0].Enabled == true))
+                    {
+                        btnarray[0].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[0] = 2;
+                        btnarray[0].Enabled = false;
+                    }
+
+                    else if ((numbers[2] == numbers[4]) && (btnarray[6].Enabled == true))
+                    {
+                        btnarray[6].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[6] = 2;
+                        btnarray[6].Enabled = false;
+                    }
+                    else if ((numbers[2] == numbers[6]) && (btnarray[4].Enabled == true))
+                    {
+                        btnarray[4].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[4] = 2;
+                        btnarray[4].Enabled = false;
+                    }
+                    else if ((numbers[4] == numbers[6]) && (btnarray[2].Enabled == true))
+                    {
+                        btnarray[2].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[2] = 2;
+                        btnarray[2].Enabled = false;
+                    }
+
+                    else if ((numbers[1] == numbers[4]) && (btnarray[7].Enabled == true))
+                    {
+                        btnarray[7].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[7] = 2;
+                        btnarray[7].Enabled = false;
+                    }
+                    else if ((numbers[1] == numbers[7]) && (btnarray[4].Enabled == true))
+                    {
+                        btnarray[4].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[4] = 2;
+                        btnarray[4].Enabled = false;
+                    }
+                    else if ((numbers[7] == numbers[4]) && (btnarray[1].Enabled == true))
+                    {
+                        btnarray[1].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[1] = 2;
+                        btnarray[1].Enabled = false;
+                    }
+
+
+
+                    else if ((numbers[3] == numbers[4]) && (btnarray[5].Enabled == true))
+                    {
+                        
+                        btnarray[5].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[5] = 2;
+                        btnarray[5].Enabled = false;
+                        
+
+                    }
+                    else if ((numbers[3] == numbers[5]) && (btnarray[4].Enabled == true))
+                    {
+                        
+                        btnarray[4].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[4] = 2;
+                        btnarray[4].Enabled = false;
+                        
+
+                    }
+                    else if ((numbers[5] == numbers[4]) && (btnarray[3].Enabled == true))
+                    {
+                        
+                        btnarray[3].BackgroundImage = ProgrammingChallenge.Properties.Resources.circle;
+                        numbers[3] = 2;
+                        btnarray[3].Enabled = false;
+                        
+
+                    }
+
+                    else
+                    {
+                        EasyPlay();
+                    }
+
+
+                    
+                }
+                
+                CheckForWin();
+                
+                
             }
 
 
         }
-        
 
-        
+
+        private void Game_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CheckConditions()
+        {
+            if (level == "Easy")
+            {
+                EasyPlay();
+            }
+            else if (level == "Hard")
+            {
+                HardPlay();
+            }
+        }
 
         
     }

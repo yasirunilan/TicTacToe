@@ -16,7 +16,7 @@ namespace ProgrammingChallenge
         {
             InitializeComponent();
         }
-
+        Game game = new Game();
         private void buttonExit_Click(object sender, EventArgs e)
         {
             //display a message box when the user clicks exit button
@@ -32,6 +32,7 @@ namespace ProgrammingChallenge
         private void buttonSinglePlayer_Click(object sender, EventArgs e)
         {
             //opens the new window for selecting play level if the user selects single player mode and hides the other windows
+            game.mode = "single";
             PlayLevel pLevel = new PlayLevel();
             pLevel.Show();
             this.Visible = false;
@@ -40,6 +41,7 @@ namespace ProgrammingChallenge
         private void buttonTwoPlayer_Click(object sender, EventArgs e)
         {
             //opens the new window for login if the user selects two player mode and hides the other windows
+            game.mode = "double";
             PlayerLoginTP loginTP = new PlayerLoginTP();
             loginTP.Show();
             this.Visible = false;

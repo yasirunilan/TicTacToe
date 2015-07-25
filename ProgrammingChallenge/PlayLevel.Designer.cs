@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.buttonEasy = new System.Windows.Forms.Button();
-            this.buttonMedium = new System.Windows.Forms.Button();
             this.buttonHard = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,19 +43,9 @@
             this.buttonEasy.UseVisualStyleBackColor = true;
             this.buttonEasy.Click += new System.EventHandler(this.buttonEasy_Click);
             // 
-            // buttonMedium
-            // 
-            this.buttonMedium.Location = new System.Drawing.Point(72, 113);
-            this.buttonMedium.Name = "buttonMedium";
-            this.buttonMedium.Size = new System.Drawing.Size(138, 30);
-            this.buttonMedium.TabIndex = 1;
-            this.buttonMedium.Text = "Medium";
-            this.buttonMedium.UseVisualStyleBackColor = true;
-            this.buttonMedium.Click += new System.EventHandler(this.buttonMedium_Click);
-            // 
             // buttonHard
             // 
-            this.buttonHard.Location = new System.Drawing.Point(72, 172);
+            this.buttonHard.Location = new System.Drawing.Point(72, 132);
             this.buttonHard.Name = "buttonHard";
             this.buttonHard.Size = new System.Drawing.Size(138, 30);
             this.buttonHard.TabIndex = 2;
@@ -82,11 +71,11 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonHard);
-            this.Controls.Add(this.buttonMedium);
             this.Controls.Add(this.buttonEasy);
             this.MaximizeBox = false;
             this.Name = "PlayLevel";
             this.Text = "Level";
+            this.Load += new System.EventHandler(this.PlayLevel_Load);
             this.ResumeLayout(false);
 
         }
@@ -94,7 +83,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonEasy;
-        private System.Windows.Forms.Button buttonMedium;
         private System.Windows.Forms.Button buttonHard;
         private System.Windows.Forms.Button buttonMenu;
     }

@@ -16,5 +16,21 @@ namespace ProgrammingChallenge
         {
             InitializeComponent();
         }
+        Game game = new Game();
+        PlayModeWindow pmw = new PlayModeWindow();
+        private void buttonPlay_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            game.Show();
+          
+            game.labelPlayer1Score.Text = textBoxPlayer1.Text;
+            game.labelPlayer2Score.Text = textBoxPlayer2.Text;
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            pmw.Show();
+        }
     }
 }
